@@ -1,0 +1,17 @@
+spring:
+  mvc:
+    dispatch-options-request: false
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    database: mysql
+  profiles:
+    group:
+      local: "local-envs,local-db"
+      dev: "dev-envs, dev-db"
+      production: ""
+    active: local
